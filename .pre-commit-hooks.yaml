@@ -1,6 +1,34 @@
-- id: check-docstrings
-  name: Check docstring format
-  description: "Enforces inline `name : description` format in NumPy-style docstrings"
-  entry: python check_docstrings.py
-  language: python
-  types: [python]
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-toml
+      - id: check-merge-conflict
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.6
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          - flake8-annotations>=3.0.0
+        args:
+          - --select=ANN
+          - --ignore=ANN101,ANN102,ANN204,ANN401
+          - --max-line-length=88
+
+  - repo: https://github.com/RemcovW2000/python-hooks
+    rev: v1.0.0
+    hooks:
+      - id: check-docstrings
+        files: ^src/
