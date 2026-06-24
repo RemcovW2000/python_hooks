@@ -28,7 +28,7 @@ repos:
           - --max-line-length=88
 
   - repo: https://github.com/RemcovW2000/python_hooks
-    rev: v1.0.0
+    rev: v1.0.4
     hooks:
       - id: check-docstrings
         files: ^src/
