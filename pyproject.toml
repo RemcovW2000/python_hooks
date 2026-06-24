@@ -5,3 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "python-hooks"
 version = "1.0.0"
+
+[project.scripts]
+check-docstrings = "check_docstrings:main"
+
+[tool.setuptools]
+py-modules = ["check_docstrings"]

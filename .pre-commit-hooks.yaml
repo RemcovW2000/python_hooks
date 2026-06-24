@@ -1,6 +1,6 @@
 - id: check-docstrings
   name: Check docstring format
   description: "Enforces inline `name : description` format in NumPy-style docstrings"
-  entry: python check_docstrings.py
+  entry: check-docstrings
   language: python
   types: [python]
