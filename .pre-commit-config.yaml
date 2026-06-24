@@ -27,7 +27,7 @@ repos:
           - --ignore=ANN101,ANN102,ANN204,ANN401
           - --max-line-length=88
 
-  - repo: https://github.com/RemcovW2000/python-hooks
+  - repo: https://github.com/RemcovW2000/python_hooks
     rev: v1.0.0
     hooks:
       - id: check-docstrings
