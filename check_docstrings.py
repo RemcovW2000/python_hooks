@@ -98,8 +98,10 @@ def check_file(path: Path) -> list[str]:
     return errors
 
 
-def main(argv: list[str]) -> int:
+def main(argv: list[str] | None = None) -> int:
     """Entry point. Args are file paths to check."""
+    if argv is None:
+        argv = sys.argv[1:]
     errors: list[str] = []
     for arg in argv:
         path = Path(arg)
